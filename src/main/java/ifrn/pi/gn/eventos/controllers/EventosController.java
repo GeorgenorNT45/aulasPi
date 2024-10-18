@@ -11,4 +11,10 @@ public class EventosController {
 		return "formEvento";
 	}
 	
+	@RequestMapping("/eventos/form/enviar")
+	public String enviar() {
+		System.out.println("Os dados foram enviados");
+		return "enviar";
+	}
+	
 }
