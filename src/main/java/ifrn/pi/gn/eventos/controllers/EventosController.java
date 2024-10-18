@@ -12,8 +12,12 @@ public class EventosController {
 	}
 	
 	@RequestMapping("/eventos/form/enviar")
-	public String enviar() {
-		System.out.println("Os dados foram enviados");
+	public String enviar(String nome, String local, String data, String horario) {
+		System.out.println("*Dados enviados*");
+		System.out.println("Nome: " + nome);
+		System.out.println("Local: " + local);
+		System.out.println("Data: " + data);
+		System.out.println("Horário: " + horario);
 		return "enviar";
 	}
 	
