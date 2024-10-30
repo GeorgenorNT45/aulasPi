@@ -22,4 +22,9 @@ public class EventosController {
 		return "enviar";
 	}
 	
+	@RequestMapping("/eventos")
+	public String adicionar() {
+		return "evento-adicionado";
+	}
+	
 }
