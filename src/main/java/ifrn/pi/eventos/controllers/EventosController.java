@@ -1,7 +1,10 @@
 package ifrn.pi.eventos.controllers;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
 import ifrn.pi.eventos.models.Evento;
 
 @Controller
@@ -11,19 +14,13 @@ public class EventosController {
 	public String form() {
 		return "formEvento";
 	}
-	
-	@RequestMapping("/eventos/form/enviar")
-	public String enviar(Evento evento) {
-		System.out.println("*Dados enviados*");
-		System.out.println("Nome: " + evento.getNome());
-		System.out.println("Local: " + evento.getLocal());
-		System.out.println("Data: " + evento.getData());
-		System.out.println("Horário: " + evento.getHorario());
-		return "enviar";
-	}
-	
-	@RequestMapping("/eventos")
-	public String adicionar() {
+
+	@PostMapping("/eventos")
+	public String adicionar(Evento evento) {
+		
+		System.out.println(evento);
+		
+		
 		return "evento-adicionado";
 	}
 	
