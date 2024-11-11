@@ -59,8 +59,10 @@ public class EventosController {
 
 		md.setViewName("eventos/detalhes");
 		Evento evento = opt.get();
-
 		md.addObject("evento", evento);
+		
+		List<Convidado> convidados = cr.findByEvento(evento);
+		md.addObject("convidados", convidados);
 
 		return md;
 	}
